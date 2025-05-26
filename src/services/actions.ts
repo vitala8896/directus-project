@@ -6,6 +6,9 @@ type DveriItem = {
   article: string;
   name: string;
   category: string;
+  img?: {
+    id: string;
+  }
 };
 
 type DveriResponse = {
@@ -20,6 +23,9 @@ export const getDveri = async (): Promise<DveriItem[]> => {
         article
         name
         category
+        img {
+          id
+        }
       }
     }
   `;
