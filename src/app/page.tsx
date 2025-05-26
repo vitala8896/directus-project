@@ -1,11 +1,13 @@
 import { gql } from 'graphql-request';
 import { graphQLClient } from '../lib/graphql-client';
+import Image from 'next/image';
 
 type DveriItem = {
   id: string;
   article: string;
   name: string;
   category: string;
+  img: string;
 };
 
 const query = gql`
@@ -15,6 +17,7 @@ const query = gql`
       article
       name
       category
+      img
     }
   }
 `;
@@ -35,6 +38,7 @@ export default async function Page() {
           <h2>{item.name}</h2>
           <p>Артикул: {item.article}</p>
           <p>Категорія: {item.category}</p>
+          {item.img && <Image src={item.img} style={{ maxWidth: '200px' }}  alt={item.name}/>}
         </div>
       ))}
     </main>
