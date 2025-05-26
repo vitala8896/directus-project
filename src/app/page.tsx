@@ -32,7 +32,7 @@ export default async function Page() {
 
   return (
     <main>
-      <h1>Список дверей</h1>
+      <h1>Список дверей!</h1>
       {dveri.map((item) => (
         <div key={item.id}>
           <h2>{item.name}</h2>
